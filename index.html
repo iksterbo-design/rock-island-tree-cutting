@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rock Island County Tree Cutting — Tree Removal, Trimming & Stump Grinding</title>
+<meta name="description" content="Licensed & insured tree removal, trimming, stump grinding, and 24/7 storm cleanup serving Rock Island County and the Quad Cities. Free estimates.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='29' fill='none' stroke='%23ffb02e' stroke-width='7' stroke-dasharray='2.6 5'/%3E%3Ccircle cx='32' cy='32' r='24' fill='%2312231a' stroke='%23ffb02e' stroke-width='2.5'/%3E%3Cpath d='M32 9 L42.5 24 L36.8 24 L47 40 L17 40 L27.2 24 L21.5 24 Z' fill='%23f6f1e4'/%3E%3Crect x='29.3' y='40' width='5.4' height='9' fill='%23f6f1e4'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Archivo+Black&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0e1c15;
+    --forest-950:#0a150f;
+    --forest-900:#12231a;
+    --forest-800:#18301f;
+    --forest-700:#20402c;
+    --green-600:#2c6e4a;
+    --green-500:#3f8a5f;
+    --green-400:#63b98a;
+    --amber:#ffb02e;
+    --amber-deep:#e8940f;
+    --cream:#f6f1e4;
+    --cream-2:#ece3cd;
+    --paper:#fbf8f1;
+    --bark:#7a5a3c;
+    --muted:#94a897;
+    --muted-light:#6b7a6e;
+    --line:rgba(246,241,228,.1);
+    --line-dark:rgba(14,28,21,.12);
+    --radius:16px;
+    --shadow:0 20px 50px -24px rgba(10,21,15,.55);
+    --shadow-sm:0 8px 22px -14px rgba(10,21,15,.4);
+    --font-display:'Archivo Black',system-ui,sans-serif;
+    --font-body:'Archivo',system-ui,sans-serif;
+  }
+
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{
+    font-family:var(--font-body);
+    color:var(--ink);
+    background:var(--paper);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+  img,svg{display:block;max-width:100%}
+  a{color:inherit;text-decoration:none}
+  ul{list-style:none}
+  button,input,select,textarea{font:inherit;color:inherit}
+
+  .container{width:min(1160px,92%);margin-inline:auto}
+  section{scroll-margin-top:88px}
+  .section{padding:96px 0}
+  @media(max-width:720px){.section{padding:64px 0}}
+
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;
+    font-weight:700;font-size:.8rem;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--amber);
+  }
+  .eyebrow::before{content:"";width:26px;height:2px;background:var(--amber);border-radius:2px}
+  .eyebrow.dark{color:var(--green-600)}
+  .eyebrow.dark::before{background:var(--green-600)}
+
+  h1,h2,h3{font-family:var(--font-display);line-height:1.05;letter-spacing:-.01em;text-wrap:balance}
+  h2{font-size:clamp(2rem,4.5vw,3.2rem)}
+  .lede{font-size:clamp(1.05rem,1.6vw,1.2rem);color:var(--muted-light);max-width:60ch}
+
+  /* ---------- Buttons ---------- */
+  .btn{
+    display:inline-flex;align-items:center;gap:10px;
+    padding:15px 26px;border-radius:12px;border:2px solid transparent;
+    font-weight:700;font-size:1rem;letter-spacing:.01em;cursor:pointer;
+    transition:transform .18s ease,box-shadow .18s ease,background .18s ease,color .18s ease;
+    min-height:48px;
+  }
+  .btn:focus-visible{outline:3px solid var(--amber);outline-offset:3px}
+  .btn-primary{background:var(--amber);color:var(--forest-950);box-shadow:0 10px 26px -12px rgba(255,176,46,.7)}
+  .btn-primary:hover{transform:translateY(-2px);background:#ffc04f;box-shadow:0 16px 32px -12px rgba(255,176,46,.8)}
+  .btn-ghost{background:transparent;color:var(--cream);border-color:var(--line)}
+  .btn-ghost:hover{background:rgba(246,241,228,.08);border-color:rgba(246,241,228,.28)}
+  .btn-dark{background:var(--forest-900);color:var(--cream)}
+  .btn-dark:hover{transform:translateY(-2px);background:var(--forest-800)}
+  .btn svg{flex:none}
+
+  /* ---------- Nav ---------- */
+  .nav{
+    position:fixed;inset:0 0 auto 0;z-index:50;
+    transition:background .25s ease,box-shadow .25s ease,backdrop-filter .25s ease;
+    padding:16px 0;
+  }
+  .nav.scrolled{
+    background:rgba(10,21,15,.86);
+    backdrop-filter:blur(12px);
+    box-shadow:0 1px 0 var(--line);
+    padding:10px 0;
+  }
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:20px}
+  .brand{display:flex;align-items:center;gap:12px}
+  .brand-mark{width:44px;height:44px;flex:none}
+  .brand-text{display:flex;flex-direction:column;line-height:1.05}
+  .brand-text b{font-family:var(--font-display);font-size:1.05rem;color:var(--cream);letter-spacing:.01em}
+  .brand-text span{font-size:.62rem;font-weight:700;letter-spacing:.32em;color:var(--amber);text-transform:uppercase}
+  .nav-links{display:flex;align-items:center;gap:28px}
+  .nav-links a{color:var(--cream);font-weight:500;font-size:.95rem;opacity:.85;transition:opacity .15s ease}
+  .nav-links a:hover{opacity:1}
+  .nav-cta{display:flex;align-items:center;gap:16px}
+  .nav-phone{display:inline-flex;align-items:center;gap:8px;color:var(--cream);font-weight:700;font-size:.98rem}
+  .nav-phone svg{color:var(--amber)}
+  .nav-toggle{display:none;background:none;border:none;cursor:pointer;padding:8px;color:var(--cream)}
+  .nav-toggle svg{display:block}
+
+  @media(max-width:900px){
+    .nav-links{display:none}
+    .nav-phone{display:none}
+    .nav-toggle{display:block}
+  }
+  .mobile-menu{
+    display:none;flex-direction:column;gap:4px;
+    background:rgba(10,21,15,.97);padding:16px 4%;border-top:1px solid var(--line);
+  }
+  .mobile-menu.open{display:flex}
+  .mobile-menu a{color:var(--cream);padding:12px 4px;font-weight:600;border-bottom:1px solid var(--line)}
+  .mobile-menu .btn{margin-top:14px;justify-content:center}
+
+  /* ---------- Hero ---------- */
+  .hero{
+    position:relative;color:var(--cream);
+    background:
+      radial-gradient(1200px 600px at 80% -10%,rgba(63,138,95,.28),transparent 60%),
+      linear-gradient(180deg,var(--forest-900),var(--forest-950));
+    overflow:hidden;
+    padding:150px 0 120px;
+  }
+  .hero::after{
+    content:"";position:absolute;inset:auto 0 -2px 0;height:140px;
+    background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 140' preserveAspectRatio='none'%3E%3Cpath d='M0 120 L90 70 L150 100 L230 40 L310 95 L390 30 L470 100 L540 55 L620 110 L700 45 L780 95 L860 30 L940 100 L1020 55 L1100 108 L1180 50 L1260 95 L1340 40 L1440 90 L1440 140 L0 140 Z' fill='%23fbf8f1'/%3E%3C/svg%3E") bottom center/cover no-repeat;
+  }
+  .hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center}
+  .hero h1{font-size:clamp(2.6rem,6vw,4.4rem);margin:20px 0 22px}
+  .hero h1 .accent{color:var(--amber)}
+  .hero .sub{font-size:clamp(1.05rem,1.7vw,1.25rem);color:var(--muted);max-width:54ch;margin-bottom:34px}
+  .hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:40px}
+  .hero-trust{display:flex;gap:26px;flex-wrap:wrap}
+  .hero-trust li{display:flex;align-items:center;gap:9px;font-size:.92rem;color:var(--muted);font-weight:500}
+  .hero-trust svg{color:var(--green-400);flex:none}
+
+  .hero-card{
+    position:relative;background:linear-gradient(160deg,var(--forest-800),var(--forest-900));
+    border:1px solid var(--line);border-radius:22px;padding:34px;
+    box-shadow:var(--shadow);
+  }
+  .hero-card::before{content:"";position:absolute;inset:0;border-radius:22px;padding:1px;background:linear-gradient(160deg,rgba(255,176,46,.5),transparent 40%);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
+  .hero-card .tag{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);margin-bottom:16px}
+  .hero-card h3{font-size:1.45rem;color:var(--cream);margin-bottom:12px}
+  .hero-card p{color:var(--muted);font-size:.97rem;margin-bottom:22px}
+  .est-row{display:flex;align-items:center;gap:12px;padding:14px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .est-row:last-child{border-bottom:none}
+  .est-row .num{font-family:var(--font-display);font-size:1.6rem;color:var(--amber);min-width:44px}
+  .est-row .lbl{font-size:.9rem;color:var(--muted)}
+  .est-row .lbl b{display:block;color:var(--cream);font-weight:600}
+
+  @media(max-width:900px){
+    .hero{padding:130px 0 90px}
+    .hero-grid{grid-template-columns:1fr;gap:40px}
+  }
+
+  /* ---------- Trust strip ---------- */
+  .trust-strip{background:var(--amber);color:var(--forest-950);padding:22px 0}
+  .trust-strip .container{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+  .trust-strip .item{display:flex;align-items:center;gap:10px;font-weight:700;font-size:.95rem}
+  .trust-strip svg{flex:none}
+
+  /* ---------- Services ---------- */
+  .services{background:var(--paper)}
+  .services-head{display:flex;align-items:flex-end;justify-content:space-between;gap:30px;margin-bottom:52px;flex-wrap:wrap}
+  .services-head .lede{max-width:52ch}
+  .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .service{
+    background:#fff;border:1px solid var(--line-dark);border-radius:var(--radius);
+    padding:30px 28px;position:relative;overflow:hidden;
+    transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease;
+  }
+  .service:hover{transform:translateY(-6px);box-shadow:var(--shadow-sm);border-color:rgba(44,110,74,.35)}
+  .service::after{content:"";position:absolute;left:0;top:0;height:4px;width:0;background:var(--green-600);transition:width .3s ease}
+  .service:hover::after{width:100%}
+  .service .ico{
+    width:52px;height:52px;border-radius:14px;display:grid;place-items:center;
+    background:var(--cream-2);color:var(--green-600);margin-bottom:20px;
+  }
+  .service h3{font-size:1.25rem;margin-bottom:10px;color:var(--ink)}
+  .service p{color:var(--muted-light);font-size:.96rem}
+  @media(max-width:900px){.services-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:600px){.services-grid{grid-template-columns:1fr}}
+
+  /* ---------- Process ---------- */
+  .process{background:var(--forest-900);color:var(--cream)}
+  .process .eyebrow,.process h2{color:var(--cream)}
+  .process-head{margin-bottom:56px}
+  .process-head .lede{color:var(--muted)}
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;counter-reset:step}
+  .step{position:relative;padding:0 26px 0 0}
+  .step .idx{
+    font-family:var(--font-display);font-size:1rem;color:var(--forest-900);
+    background:var(--amber);width:44px;height:44px;border-radius:12px;display:grid;place-items:center;margin-bottom:20px;
+  }
+  .step h3{font-size:1.15rem;margin-bottom:10px}
+  .step p{color:var(--muted);font-size:.94rem}
+  .step:not(:last-child)::after{content:"";position:absolute;top:22px;right:10px;width:calc(100% - 60px);height:2px;background:var(--line)}
+  @media(max-width:900px){.steps{grid-template-columns:repeat(2,1fr);gap:36px}.step:not(:last-child)::after{display:none}}
+  @media(max-width:560px){.steps{grid-template-columns:1fr}}
+
+  /* ---------- Why / area ---------- */
+  .why{background:var(--cream)}
+  .why-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+  .why-copy h2{color:var(--ink);margin-bottom:20px}
+  .why-copy .lede{color:var(--muted-light);margin-bottom:30px}
+  .why-list{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .why-list li{display:flex;gap:12px;align-items:flex-start}
+  .why-list svg{flex:none;color:var(--green-600);margin-top:2px}
+  .why-list b{display:block;font-weight:700;color:var(--ink);font-size:1rem}
+  .why-list span{font-size:.9rem;color:var(--muted-light)}
+  .area-card{
+    background:var(--forest-900);color:var(--cream);border-radius:22px;padding:38px;
+    box-shadow:var(--shadow);
+  }
+  .area-card h3{font-size:1.5rem;margin-bottom:10px}
+  .area-card>p{color:var(--muted);margin-bottom:26px;font-size:.96rem}
+  .towns{display:flex;flex-wrap:wrap;gap:10px}
+  .towns span{
+    font-size:.85rem;font-weight:600;padding:8px 14px;border-radius:999px;
+    background:rgba(246,241,228,.07);border:1px solid var(--line);color:var(--cream-2);
+  }
+  @media(max-width:900px){.why-grid{grid-template-columns:1fr}.why-list{grid-template-columns:1fr}}
+
+  /* ---------- Testimonials ---------- */
+  .testimonials{background:var(--paper)}
+  .t-head{text-align:center;margin-bottom:52px}
+  .t-head .eyebrow{justify-content:center}
+  .t-head h2{margin:12px 0 10px;color:var(--ink)}
+  .t-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .quote{background:#fff;border:1px solid var(--line-dark);border-radius:var(--radius);padding:30px;display:flex;flex-direction:column;gap:18px}
+  .quote .stars{color:var(--amber-deep);letter-spacing:2px}
+  .quote p{color:var(--ink);font-size:.98rem;font-style:italic}
+  .quote .who{display:flex;align-items:center;gap:12px;margin-top:auto}
+  .quote .who .avatar{width:40px;height:40px;border-radius:50%;background:var(--cream-2);display:grid;place-items:center;font-weight:700;color:var(--green-600)}
+  .quote .who b{display:block;font-size:.92rem}
+  .quote .who span{font-size:.8rem;color:var(--muted-light)}
+  @media(max-width:900px){.t-grid{grid-template-columns:1fr}}
+
+  /* ---------- Contact ---------- */
+  .contact{background:linear-gradient(180deg,var(--forest-900),var(--forest-950));color:var(--cream)}
+  .contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px}
+  .contact-copy h2{color:var(--cream);margin:16px 0 18px}
+  .contact-copy .lede{color:var(--muted);margin-bottom:34px}
+  .contact-info{display:flex;flex-direction:column;gap:20px}
+  .contact-info li{display:flex;gap:14px;align-items:flex-start}
+  .contact-info .ico{width:44px;height:44px;flex:none;border-radius:12px;background:rgba(255,176,46,.12);display:grid;place-items:center;color:var(--amber)}
+  .contact-info b{display:block;font-weight:700;font-size:1.02rem}
+  .contact-info span,.contact-info a{color:var(--muted);font-size:.95rem}
+  .contact-info a:hover{color:var(--cream)}
+  .hours{margin-top:6px;font-size:.9rem;color:var(--muted)}
+  .form{
+    background:var(--forest-800);border:1px solid var(--line);border-radius:22px;padding:34px;
+  }
+  .form h3{font-size:1.3rem;margin-bottom:6px}
+  .form .note{color:var(--muted);font-size:.9rem;margin-bottom:24px}
+  .field{margin-bottom:18px}
+  .field label{display:block;font-size:.85rem;font-weight:600;margin-bottom:8px;color:var(--cream-2)}
+  .field input,.field select,.field textarea{
+    width:100%;padding:13px 14px;border-radius:11px;border:1px solid var(--line);
+    background:rgba(10,21,15,.5);color:var(--cream);transition:border-color .15s ease,box-shadow .15s ease;
+  }
+  .field input::placeholder,.field textarea::placeholder{color:rgba(148,168,151,.55)}
+  .field select{appearance:none}
+  .field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--amber);box-shadow:0 0 0 3px rgba(255,176,46,.18)}
+  .field textarea{resize:vertical;min-height:110px}
+  .row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .form-status{display:none;margin-top:16px;padding:14px 16px;border-radius:11px;font-weight:600;font-size:.92rem}
+  .form-status.ok{display:block;background:rgba(99,185,138,.14);color:#a7e0c0;border:1px solid rgba(99,185,138,.4)}
+  @media(max-width:900px){.contact-grid{grid-template-columns:1fr}}
+  @media(max-width:560px){.row{grid-template-columns:1fr}}
+
+  /* ---------- Footer ---------- */
+  .footer{background:var(--forest-950);color:var(--muted);padding:60px 0 32px}
+  .footer-top{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;padding-bottom:40px;border-bottom:1px solid var(--line)}
+  .footer .brand-text b{color:var(--cream)}
+  .footer-about p{font-size:.92rem;max-width:34ch;margin-top:16px}
+  .footer h4{font-family:var(--font-display);font-size:.95rem;color:var(--cream);margin-bottom:16px;letter-spacing:.02em}
+  .footer ul li{margin-bottom:10px}
+  .footer ul a{font-size:.92rem;transition:color .15s ease}
+  .footer ul a:hover{color:var(--cream)}
+  .footer-bottom{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-top:28px;font-size:.82rem}
+  .footer-bottom .legal{display:flex;gap:18px}
+  .footer-bottom a:hover{color:var(--cream)}
+  @media(max-width:760px){.footer-top{grid-template-columns:1fr;gap:30px}}
+
+  /* ---------- Reveal ---------- */
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.in{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    .reveal{opacity:1;transform:none;transition:none}
+    .btn,.service{transition:none}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <div class="container nav-inner">
+    <a href="#top" class="brand" aria-label="Rock Island County Tree Cutting — home">
+      <!-- Logo mark -->
+      <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true">
+        <circle cx="32" cy="32" r="29" fill="none" stroke="#ffb02e" stroke-width="7" stroke-dasharray="2.6 5"/>
+        <circle cx="32" cy="32" r="24" fill="#12231a" stroke="#ffb02e" stroke-width="2.5"/>
+        <path d="M32 9 L42.5 24 L36.8 24 L47 40 L17 40 L27.2 24 L21.5 24 Z" fill="#f6f1e4"/>
+        <rect x="29.3" y="40" width="5.4" height="9" fill="#f6f1e4"/>
+      </svg>
+      <span class="brand-text">
+        <b>Rock Island</b>
+        <span>Tree Cutting</span>
+      </span>
+    </a>
+
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#services">Services</a>
+      <a href="#process">How It Works</a>
+      <a href="#area">Service Area</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="nav-cta">
+      <a class="nav-phone" href="tel:+13095550183">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        (309) 555-0183
+      </a>
+      <a href="#contact" class="btn btn-primary">Get a Free Estimate</a>
+    </div>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+  <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile">
+    <a href="#services">Services</a>
+    <a href="#process">How It Works</a>
+    <a href="#area">Service Area</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#contact">Contact</a>
+    <a href="tel:+13095550183" class="btn btn-primary">Call (309) 555-0183</a>
+  </nav>
+</header>
+
+<main id="top">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <span class="eyebrow">Rock Island County · Illinois</span>
+        <h1>Big trees. <span class="accent">Clean cuts.</span> Nothing left behind.</h1>
+        <p class="sub">Licensed &amp; insured tree removal, trimming, and stump grinding for homes and businesses across the Quad Cities. Free on-site estimates — and we haul every last branch away.</p>
+        <div class="hero-actions">
+          <a href="tel:+13095550183" class="btn btn-primary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            Call (309) 555-0183
+          </a>
+          <a href="#contact" class="btn btn-ghost">Request a Quote</a>
+        </div>
+        <ul class="hero-trust">
+          <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Fully licensed &amp; insured</li>
+          <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Free estimates</li>
+          <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> 24/7 storm response</li>
+        </ul>
+      </div>
+
+      <aside class="hero-card">
+        <div class="tag">Why homeowners call us</div>
+        <h3>A crew that shows up, works safe, and leaves the yard clean.</h3>
+        <p>No hidden fees. No torn-up lawn. Just certified climbers and rigging crews who treat your property like their own.</p>
+        <div class="est-row">
+          <span class="num">1</span>
+          <span class="lbl"><b>Free estimate</b>On-site, same week.</span>
+        </div>
+        <div class="est-row">
+          <span class="num">2</span>
+          <span class="lbl"><b>Safe removal</b>Rigging &amp; crane-supported.</span>
+        </div>
+        <div class="est-row">
+          <span class="num">3</span>
+          <span class="lbl"><b>Full cleanup</b>Chipped, raked, hauled away.</span>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ============ TRUST STRIP ============ -->
+  <div class="trust-strip">
+    <div class="container">
+      <span class="item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Licensed &amp; Insured</span>
+      <span class="item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Free On-Site Estimates</span>
+      <span class="item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> 24/7 Emergency Service</span>
+      <span class="item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Locally Owned</span>
+    </div>
+  </div>
+
+  <!-- ============ SERVICES ============ -->
+  <section class="section services" id="services">
+    <div class="container">
+      <div class="services-head reveal">
+        <div>
+          <span class="eyebrow dark">Our Services</span>
+          <h2 style="margin-top:12px">Every job, from one dead limb to a full lot clearing.</h2>
+        </div>
+        <p class="lede">We handle the whole tree — canopy, trunk, and stump — with the right equipment for the job and a crew that leaves your property cleaner than they found it.</p>
+      </div>
+
+      <div class="services-grid">
+        <article class="service reveal">
+          <div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M12 4 7 12h10L12 4ZM12 12l-4 8M12 12l4 8M9 22h6"/></svg></div>
+          <h3>Tree Removal</h3>
+          <p>Hazardous, dead, or unwanted trees taken down safely with rigging and crane support — even in tight yards and near structures.</p>
+        </article>
+        <article class="service reveal">
+          <div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V10M4 10a4 4 0 0 1 8 0v11M8 21V6a4 4 0 0 1 8 0v15M16 21v-8a4 4 0 0 1 8 0v8"/></svg></div>
+          <h3>Trimming &amp; Pruning</h3>
+          <p>Structural pruning and crown cleanup that keep trees healthy, safe, and off your roof and power lines.</p>
+        </article>
+        <article class="service reveal">
+          <div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12h8M12 8v8M12 12l-3-3M12 12l3 3M12 12l3-3M12 12l-3 3"/></svg></div>
+          <h3>Stump Grinding</h3>
+          <p>Below-grade grinding that turns stubborn stumps into level ground and fresh soil — roots included.</p>
+        </article>
+        <article class="service reveal">
+          <div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 5v8l-8 5-8-5V8l8-5z"/><path d="M12 8v3M12 13.5v.01M10 9.5 8.5 11M14 9.5 15.5 11"/></svg></div>
+          <h3>Emergency Storm Cleanup</h3>
+          <p>24/7 response for downed limbs and storm-damaged trees. We get there fast and make the property safe first.</p>
+        </article>
+        <article class="service reveal">
+          <div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M4 21V10l4-3 4 3 4-3 4 3v11M7 21v-6h2v6M11 21v-6h2v6M15 21v-6h2v6"/></svg></div>
+          <h3>Lot &amp; Land Clearing</h3>
+          <p>Clear building sites and overgrown lots fast, with chipping and haul-away included in every quote.</p>
+        </article>
+        <article class="service reveal">
+          <div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M2 12h4M18 12h4M5 5l3 3M16 16l3 3M19 5l-3 3M8 16l-3 3"/><circle cx="12" cy="12" r="4"/></svg></div>
+          <h3>Tree Health &amp; Risk Assessment</h3>
+          <p>Arborist eyes on your trees before problems become hazards — disease, decay, and structural risk.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROCESS ============ -->
+  <section class="section process" id="process">
+    <div class="container">
+      <div class="process-head reveal">
+        <span class="eyebrow">How It Works</span>
+        <h2 style="margin-top:12px">Four steps. Zero surprises.</h2>
+        <p class="lede" style="margin-top:14px">From the first call to the final rake, you always know what's happening and what it costs.</p>
+      </div>
+      <div class="steps">
+        <div class="step reveal">
+          <div class="idx">01</div>
+          <h3>Call or request a quote</h3>
+          <p>Tell us what's going on with your trees. We'll ask a few quick questions and schedule your estimate.</p>
+        </div>
+        <div class="step reveal">
+          <div class="idx">02</div>
+          <h3>Free on-site estimate</h3>
+          <p>We walk the property, assess the trees, and give you a clear written quote — no pressure, no surprises.</p>
+        </div>
+        <div class="step reveal">
+          <div class="idx">03</div>
+          <h3>We cut &amp; clean up</h3>
+          <p>Our crew removes or trims with rigging and cranes, then chips, rakes, and hauls everything away.</p>
+        </div>
+        <div class="step reveal">
+          <div class="idx">04</div>
+          <h3>Final walkthrough</h3>
+          <p>We walk the property with you to make sure the job's done right and the yard is spotless.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WHY + AREA ============ -->
+  <section class="section why" id="area">
+    <div class="container why-grid">
+      <div class="why-copy reveal">
+        <span class="eyebrow dark">Why Choose Us</span>
+        <h2 style="margin-top:12px">The tree crew your neighbors already trust.</h2>
+        <p class="lede">We're a local, family-owned outfit that's worked the Quad Cities for years. That means accountability — we're not a fly-by-night crew that vanishes after the storm.</p>
+        <ul class="why-list">
+          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/><path d="M9 12l2 2 4-4"/></svg><span><b>Certified &amp; insured</b>Licensed arborists and fully insured crews on every job.</span></li>
+          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span><b>24/7 emergency line</b>Storm damage doesn't wait for business hours. Neither do we.</span></li>
+          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg><span><b>Upfront pricing</b>A written quote before we touch a branch. The price we quote is the price you pay.</span></li>
+          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6"/></svg><span><b>Yard-friendly crews</b>We protect your lawn, fence, and landscape while we work.</span></li>
+        </ul>
+      </div>
+
+      <aside class="area-card reveal">
+        <h3>Serving Rock Island County &amp; the Quad Cities</h3>
+        <p>Based right here in the county, we cover the whole area — including these communities:</p>
+        <div class="towns">
+          <span>Rock Island</span><span>Moline</span><span>East Moline</span><span>Milan</span>
+          <span>Silvis</span><span>Carbon Cliff</span><span>Coal Valley</span><span>Andalusia</span>
+          <span>Hampton</span><span>Port Byron</span><span>Rapids City</span><span>Cordova</span>
+          <span>Hillsdale</span><span>Orion</span><span>Sherrard</span><span>Reynolds</span>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ============ TESTIMONIALS ============ -->
+  <section class="section testimonials" id="reviews">
+    <div class="container">
+      <div class="t-head reveal">
+        <span class="eyebrow dark" style="justify-content:center">What People Say</span>
+        <h2>Real jobs. Real neighbors.</h2>
+      </div>
+      <div class="t-grid">
+        <article class="quote reveal">
+          <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <p>"They took down a massive oak leaning over our garage in one afternoon. Protected the flower beds, raked up every chip, and the price matched the quote exactly."</p>
+          <div class="who"><span class="avatar">DM</span><span><b>Dana M.</b><span>Moline, IL</span></span></div>
+        </article>
+        <article class="quote reveal">
+          <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <p>"Came out same-day after the July storm put a limb through our fence. Got the tree off the house safely and had the yard clean before dark."</p>
+          <div class="who"><span class="avatar">RK</span><span><b>Ray K.</b><span>Rock Island, IL</span></span></div>
+        </article>
+        <article class="quote reveal">
+          <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <p>"Stump grinding on three big stumps — fast, clean, and the crew was friendly and careful around the new patio. Highly recommend."</p>
+          <div class="who"><span class="avatar">JT</span><span><b>Janelle T.</b><span>Coal Valley, IL</span></span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="section contact" id="contact">
+    <div class="container contact-grid">
+      <div class="contact-copy reveal">
+        <span class="eyebrow">Get In Touch</span>
+        <h2>Request your free estimate.</h2>
+        <p class="lede">Tell us what you need done and we'll get back to you — usually the same business day — to schedule a free on-site estimate.</p>
+        <ul class="contact-info">
+          <li>
+            <span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+            <span><b>Phone</b><a href="tel:+13095550183">(309) 555-0183</a></span>
+          </li>
+          <li>
+            <span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></span>
+            <span><b>Email</b><a href="mailto:hello@rockislandtreecutting.com">hello@rockislandtreecutting.com</a></span>
+          </li>
+          <li>
+            <span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+            <span><b>Service Area</b><span>Rock Island County &amp; the Quad Cities, Illinois</span></span>
+          </li>
+        </ul>
+        <p class="hours"><strong style="color:var(--cream)">Hours:</strong> Mon–Sat 7:00a–6:00p · 24/7 emergency storm response</p>
+      </div>
+
+      <form class="form reveal" id="quoteForm" novalidate>
+        <h3>Free estimate request</h3>
+        <p class="note">Fill this out and we'll call or email you back to schedule.</p>
+        <div class="row">
+          <div class="field">
+            <label for="fName">Full name</label>
+            <input id="fName" name="name" type="text" placeholder="Your name" required>
+          </div>
+          <div class="field">
+            <label for="fPhone">Phone</label>
+            <input id="fPhone" name="phone" type="tel" placeholder="(555) 555-5555" required>
+          </div>
+        </div>
+        <div class="field">
+          <label for="fEmail">Email</label>
+          <input id="fEmail" name="email" type="email" placeholder="you@example.com">
+        </div>
+        <div class="field">
+          <label for="fService">What do you need?</label>
+          <select id="fService" name="service">
+            <option>Tree removal</option>
+            <option>Trimming &amp; pruning</option>
+            <option>Stump grinding</option>
+            <option>Emergency / storm cleanup</option>
+            <option>Lot &amp; land clearing</option>
+            <option>Tree health / risk assessment</option>
+            <option>Something else</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="fMsg">Tell us about the job</label>
+          <textarea id="fMsg" name="message" placeholder="Number of trees, size, location on property, access, any hazards…"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center">Send Request</button>
+        <div class="form-status ok" id="formStatus" role="status">Thanks! Your request was received — we'll be in touch within one business day.</div>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-about">
+        <a href="#top" class="brand" aria-label="Rock Island County Tree Cutting — home">
+          <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true">
+            <circle cx="32" cy="32" r="29" fill="none" stroke="#ffb02e" stroke-width="7" stroke-dasharray="2.6 5"/>
+            <circle cx="32" cy="32" r="24" fill="#12231a" stroke="#ffb02e" stroke-width="2.5"/>
+            <path d="M32 9 L42.5 24 L36.8 24 L47 40 L17 40 L27.2 24 L21.5 24 Z" fill="#f6f1e4"/>
+            <rect x="29.3" y="40" width="5.4" height="9" fill="#f6f1e4"/>
+          </svg>
+          <span class="brand-text">
+            <b>Rock Island</b>
+            <span>Tree Cutting</span>
+          </span>
+        </a>
+        <p>Licensed &amp; insured tree care serving Rock Island County and the Quad Cities. Safe crews, fair prices, spotless yards.</p>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">Tree Removal</a></li>
+          <li><a href="#services">Trimming &amp; Pruning</a></li>
+          <li><a href="#services">Stump Grinding</a></li>
+          <li><a href="#services">Emergency Storm Cleanup</a></li>
+          <li><a href="#services">Lot &amp; Land Clearing</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+13095550183">(309) 555-0183</a></li>
+          <li><a href="mailto:hello@rockislandtreecutting.com">hello@rockislandtreecutting.com</a></li>
+          <li><a href="#area">Service Area</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Rock Island County Tree Cutting. All rights reserved.</span>
+      <div class="legal">
+        <a href="#top">Back to top</a>
+        <span>Fully Licensed &amp; Insured</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Sticky nav background on scroll
+  const nav = document.getElementById('nav');
+  const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 24);
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // Mobile menu toggle
+  const toggle = document.getElementById('navToggle');
+  const menu = document.getElementById('mobileMenu');
+  toggle.addEventListener('click', () => {
+    const open = menu.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', String(open));
+  });
+  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    menu.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+  }));
+
+  // Reveal on scroll (respects prefers-reduced-motion via CSS)
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // Quote form — front-end only. Wire this to a backend/Formspree/email when ready.
+  const form = document.getElementById('quoteForm');
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const status = document.getElementById('formStatus');
+    const name = document.getElementById('fName');
+    const phone = document.getElementById('fPhone');
+    if (!name.value.trim() || !phone.value.trim()) {
+      status.textContent = 'Please enter at least your name and phone number.';
+      status.style.display = 'block';
+      status.style.background = 'rgba(240,120,90,.16)';
+      status.style.color = '#ffb9a8';
+      status.style.border = '1px solid rgba(240,120,90,.45)';
+      return;
+    }
+    status.textContent = 'Thanks, ' + name.value.trim().split(' ')[0] + '! Your request was received — we\u2019ll be in touch within one business day.';
+    status.style.display = 'block';
+    status.style.background = 'rgba(99,185,138,.14)';
+    status.style.color = '#a7e0c0';
+    status.style.border = '1px solid rgba(99,185,138,.4)';
+    form.reset();
+  });
+</script>
+</body>
+</html>

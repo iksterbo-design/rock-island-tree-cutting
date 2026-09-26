@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="512" height="512" role="img" aria-label="Rock Island County Tree Cutting logo">
+  <!-- Saw-blade teeth ring -->
+  <circle cx="32" cy="32" r="29" fill="none" stroke="#ffb02e" stroke-width="7" stroke-dasharray="2.6 5"/>
+  <!-- Blade body -->
+  <circle cx="32" cy="32" r="24" fill="#12231a" stroke="#ffb02e" stroke-width="2.5"/>
+  <!-- Pine canopy -->
+  <path d="M32 9 L42.5 24 L36.8 24 L47 40 L17 40 L27.2 24 L21.5 24 Z" fill="#f6f1e4"/>
+  <!-- Trunk -->
+  <rect x="29.3" y="40" width="5.4" height="9" fill="#f6f1e4"/>
+</svg>
